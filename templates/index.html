@@ -26,7 +26,7 @@
         /*上方黑線*/
         .box{background-color: rgb(27, 66, 24);height: 10px; ;}
         /*中間圖片*/
-        .pic{margin-left:auto;margin:auto;display:block;margin-bottom: 40px;width:80vw;height: 100vh;} /*圖片置中*/
+        #pic{margin-left:auto;margin:auto;display:block;margin-bottom: 40px;width:80vw;height: 100vh;} /*圖片置中*/
         
         /*選單*/
         header{
@@ -66,16 +66,6 @@
         /*漂浮小盒子2*/
         .float2>img{width:130px;height:130px;
         position:absolute;left: 10px;top:20px;;}
-
-        /*漂浮小盒子3*/
-        .float3>form{width:130px;
-        position:absolute;left: 10px;top:200px;
-        font-size: small;}
-
-        .float3-1{position:absolute;
-        left: 10px;top:175px;
-        font-size: small}
-
 
 
         /*底下小圖片*/
@@ -118,8 +108,9 @@
     </script>
 </head>
 <body>
-    {% if name == '' %}
     <div class="box"></div><!--上邊黑線-->
+
+
     <header><!--目錄-->
         <div class="box2" onclick="location.href='index.html'">首頁</div>
         <div class="box2" id="flip" >全部商品</div>
@@ -134,44 +125,37 @@
         <div class="box2" onclick="location.href='客服專區.html'">客服專區</div>
     </header>
     <div class="float"><!--漂浮小盒子1-->
-        <img src="/media/9優惠.png"> 
+        <img src="media/9優惠.png"> 
     </div> 
     <div class="float2"><!--漂浮小盒子2-->
-        <img src="/media/logo.jpg">
-    </div> 
-    <div class="float3"><!--漂浮小盒子3-->
-        <form method="post">
-            <div >請輸入你的信箱：</div>
-            <input type="text" name="user" style='width:100px;margin-bottom: 10px;'>
-            <input type="submit" name="send" value="送出" style="font-size: 5px;">
-        </form>
+        <img src="media/logo.jpg">
     </div> 
     <article><!--正中圖片-->
-    <img class="pic" src="/media/首頁.jpg">
+    <img id="pic" src="media/首頁.jpg">
     </article>
 
 
     <!--下方圖片-->
     <section>
-        <img src="/media/小圖1.jpg" >
-        <img src="/media/小圖2.jpg" >
-        <img src="/media/小圖3.jpg" >
-        <img src="/media/小圖4.jpg" >
-        <img src="/media/小圖5.jpg" >
-        <img src="/media/小圖6.jpg" >
-        <img src="/media/小圖7.jpg" >
-        <img src="/media/小圖2.jpg" >
-        <img src="/media/小圖1.jpg" >
+        <img src="media/小圖1.jpg" >
+        <img src="media/小圖2.jpg" >
+        <img src="media/小圖3.jpg" >
+        <img src="media/小圖6.jpg" >
+        <img src="media/小圖5.jpg" >
+        <img src="media/小圖4.jpg" >
+        <img src="media/小圖7.jpg" >
+        <img src="media/小圖8.jpg" >
+        <img src="media/小圖9.jpg" >
     </section>
 
 
 
     <nav> <!--聯絡方式-->
         <div>
-        <img  src="/media/facebook.png">
-        <img  src="/media/instagram.png">
-        <img  src="/media/whatsapp.png">
-        <img  src="/media/youtube.png">
+        <img  src="media/facebook.png">
+        <img  src="media/instagram.png">
+        <img  src="media/whatsapp.png">
+        <img  src="media/youtube.png">
         </div>
         <div class="num">
             <span>　　</span> 
@@ -184,87 +168,26 @@
     <footer></footer>
     <!--游標-->
     
-    <img class="apple" src="/media/logo.jpg">
-    
-    <!--icon-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
-    
-    
-    {% else %}
-
-
-    <div class="box"></div><!--上邊黑線-->
-    <header><!--目錄-->
-        <div class="box2" onclick="location.href='index.html'">首頁</div>
-        <div class="box2" id="flip" >全部商品</div>
-        <div class="panel">
-        <p onclick="location.href='全部商品.html'">◎ 查看菜單</p>
-        <p onclick="location.href='最新優惠.html'">◎ 最新優惠</p>
-        </div>
-        <div class="box2" onclick="location.href='門市資訊.html'">門市資訊</div>
-        <div class="box2" onclick="location.href='企業責任.html'">企業責任</div>
-        <div class="box2" onclick="location.href='品牌故事.html'">品牌故事</div>
-        <div class="box2" onclick="location.href='加入我們.html'">加入我們</div>
-        <div class="box2" onclick="location.href='客服專區.html'">客服專區</div>
-    </header>
-    <div class="float"><!--漂浮小盒子1-->
-        <img src="/media/9優惠.png"> 
-    </div> 
-    <div class="float2"><!--漂浮小盒子2-->
-        <img src="/media/logo.jpg">
-    </div> 
-    <div class="float3-1"><!--漂浮小盒子3-->
-        <p style="text-align: center;">
-            <i class="fas fa-utensils fa-pulse"></i>
-            <span>　</span>歡迎光臨<span>　</span>
-            <i class="fas fa-utensils fa-pulse"></i>
-        </p>
-        </p>{{name}}</p>
-    </div> 
-    <article><!--正中圖片-->
-    <img class="pic" src="/media/首頁.jpg">
-    </article>
-
-
-    <!--下方圖片-->
-    <section>
-        <img src="/media/小圖1.jpg" >
-        <img src="/media/小圖2.jpg" >
-        <img src="/media/小圖3.jpg" >
-        <img src="/media/小圖4.jpg" >
-        <img src="/media/小圖5.jpg" >
-        <img src="/media/小圖6.jpg" >
-        <img src="/media/小圖7.jpg" >
-        <img src="/media/小圖2.jpg" >
-        <img src="/media/小圖1.jpg" >
-    </section>
-
-
-
-    <nav> <!--聯絡方式-->
-        <div>
-        <img  src="/media/facebook.png">
-        <img  src="/media/instagram.png">
-        <img  src="/media/whatsapp.png">
-        <img  src="/media/youtube.png">
-        </div>
-        <div class="num">
-            <span>　　</span> 
-            連絡電話：04-2380-8217<i class="fas fa-mug-hot"></i>
-            <span>　　</span> 
-            聯絡信箱：anapplegreen.coffee@gmail.com<i class="fas fa-mug-hot"></i>
-        </div>
-    </nav>
-    
-    <footer></footer>
-    <!--游標-->
-    
-    <img class="apple" src="/media/logo.jpg">
+    <img class="apple" src="media/logo.jpg">
     
     <!--icon-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
 
+    <script type='text/javascript'>
 
-    {% endif %}
+        let pic =document.getElementById('pic')
+        //創建圖片路徑
+        let picArr = ["media/首頁.jpg","media/首頁2.jpg","media/首頁3.jpg","media/首頁4.jpg","media/首頁5.jpg"]
+        let index=0
+        
+            setInterval(function(){
+                index++;
+                index =index %5;
+                pic.src =picArr[index]
+            },2000)
+        
+        
+
+    </script>
 </body>
 </html>

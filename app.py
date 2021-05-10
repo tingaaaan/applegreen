@@ -46,3 +46,5 @@ def join():
 @app.route('/客服專區.html',methods =['post','get']) 
 def service(): 
 	return render_template('客服專區.html')
+
+	123

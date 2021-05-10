@@ -57,10 +57,7 @@ def result():
     con = sql.connect("database.db")
     msg = "新增失敗 原因: {}"
     if request.method == 'POST':
-        print('==========debug==========')
         try:
-            print('==========debug==========')
-            print(request.form)
             nm = request.form['nm']
             phone = request.form['phone']
             telephone = request.form['telephone']

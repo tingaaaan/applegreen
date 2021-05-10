@@ -7,6 +7,7 @@ import cv2;
 from werkzeug.utils import secure_filename;
 import os;
 import time;
+import sqlite3 as sql;
 
 
 
@@ -26,6 +27,10 @@ def ites():
 @app.route('/全部商品.html',methods =['post','get']) 
 def items(): 
 	return render_template('全部商品.html')
+
+@app.route('/最新優惠.html',methods =['post','get']) 
+def latest(): 
+	return render_template('最新優惠.html')
 
 @app.route('/門市資訊.html',methods =['post','get']) 
 def retail(): 
@@ -47,4 +52,31 @@ def join():
 def service(): 
 	return render_template('客服專區.html')
 
-	123
+@app.route('/result', methods=['POST'])
+def result():
+    con = sql.connect("database.db")
+    msg = "新增失敗 原因: {}"
+    if request.method == 'POST':
+        print('==========debug==========')
+        try:
+            print('==========debug==========')
+            print(request.form)
+            nm = request.form['nm']
+            phone = request.form['phone']
+            telephone = request.form['telephone']
+            email = request.form['email']
+            content = request.form['content']
+            print(nm, phone, telephone, email, content)
+
+            cur = con.cursor()
+            cur.execute(
+                "INSERT INTO service1(name, phone, telephone, email, content) VALUES(?, ?, ?, ?, ?)", (nm, phone, telephone, email, content)
+                )
+            con.commit()
+            msg = "新增成功"
+        except Exception as e:
+            con.rollback()
+            msg = msg.format(e)
+
+        con.close()
+        return render_template("result.html", msg=msg)

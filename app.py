@@ -19,6 +19,10 @@ def index():
 	return render_template('index.html',name="")
 
 
+@app.route('/index.html',methods =['post','get']) 
+def ites(): 
+	return render_template('index.html')
+
 @app.route('/全部商品.html',methods =['post','get']) 
 def items(): 
 	return render_template('全部商品.html')

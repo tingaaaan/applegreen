@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🍏 蘋果綠咖啡 ☕ </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+    <!--icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+    <script type="text/javascript" >
+            $(document).ready(function()
+            {
+            $("#flip").click(function(){
+            $(".panel").slideToggle("slow");
+            });
+            });
+    </script>
+
+    <style>
+        body {margin:0px;font-family: 'Noto Serif TC', serif;} /*對齊網頁上緣*/
+
+        /*上方黑線*/
+        .box{background-color: rgb(27, 66, 24);height: 10px;}
+        /*中間圖片*/
+        .pic{margin-left:auto;margin:auto;display:block;margin-bottom: 40px;} /*圖片置中*/
+        
+        /*選單*/
+        header{
+            display:flex;
+            justify-content:center /**/
+            }
+        header>.panel,#flip
+            {
+            margin:0px;
+            padding:0px;
+            text-align:center;
+            }
+        header>.panel
+            {
+            height:120px;
+            display:none;
+            padding:0px;
+            cursor: pointer
+            }
+            
+        .box2{
+            background-color:white;
+            width:10%;height:50px;
+            display:inline-block; /*一行多div*/
+            text-align: center; /*水平對齊*/
+            line-height: 50px; /*置中*/
+            }
+        .box2>a{width: 100%;height: 100%;}
+        .box2:hover{background-color:black;color: white;cursor: pointer;}
+        
+        /*加入我們*/
+        .line{
+            margin-top: 40px;
+            margin-bottom: 70px;
+            margin-left: 420px;
+            text-align: center;
+        }
+
+        article>h2{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            background-color: rgba(27, 66, 24, 0.87);
+            text-shadow: rgb(122, 122, 122) 4px 3px 0px;
+            margin-left: 20vw;margin-right:20vw ;
+                }
+        
+        .abc{
+            display: grid;
+            grid-template-columns: [c1] 100px [c2] 500px;
+            grid-template-rows: repeat(4);
+            padding-left: 450px;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        .d1{
+            grid-column: 1 / 3;
+            text-align: center;
+            border-bottom: rgba(27, 66, 24, 0.808);
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(27, 66, 24, 0.87);
+            text-shadow: rgb(122, 122, 122) 4px 3px 0px;
+        }
+        .d2{
+            border-right: cadetblue solid;
+        }
+        .d3{
+            background-color: rgba(180, 190, 176, 0.849);
+        }
+
+
+
+        article table{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        table{
+            border-width: 4px;
+            border-radius:1ch;
+            width: 800px;
+            }
+        tbody{
+            background-color: rgba(104, 153, 102, 0.5);
+        }
+        tbody>tr>td{
+            border-radius:1ch;
+        }
+        .t1{
+            color: honeydew;
+            background-color: rgba(66, 92, 62, 0.562);
+            text-align: center;
+        }
+        .t2{
+            padding-left: 15px;
+        }
+
+        /*漂浮小盒子1*/
+        .float>img{width:58px;height:432px;
+        position:fixed;right: 10px;top:60px}
+
+        /*漂浮小盒子2*/
+        .float2>img{width:130px;height:130px;
+        position:absolute;left: 10px;top:20px;;}
+
+        /*背景*/
+        .img>.pic{position: fixed;z-index: -1;margin-bottom: 40px;width:80vw;height: 100vh;margin-left:10vw;opacity: 0.3;}
+
+        /*聯絡方法*/
+        nav{background-color: rgba(165, 150, 150, 0.144);padding-left: 350px;display: flex;}
+        nav>div>img{width:35px;height:35px;margin-left: 10px;margin-top: 60px;}
+        nav>.num{text-align:center;margin-top: 70px;margin-left: 20px;}
+
+        /*底下黑線*/
+        footer{background-color: black;height: 10px;margin-top: 5px;}
+        /*游標*/
+        .apple{height:70px;width:  70px;position: absolute;border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).mousemove(function(event){
+                    var yy =event.pageY;
+                    var y2 = yy + 0;
+                    var xx =event.pageX;
+                    var x2 = xx +20;
+                    $(".apple").css({
+                    "top": y2+"px",
+                    "left": x2+"px"
+                    })
+                });  
+            });        
+    </script>
+</head>
+<body>
+    <div class="box"></div><!--上邊黑線-->
+
+    
+    <header><!--目錄-->
+        <div class="box2" onclick="location.href='index.html'">首頁</div>
+        <div class="box2" id="flip" >全部商品</div>
+        <div class="panel">
+        <p onclick="location.href='全部商品.html'">◎ 查看菜單</p>
+        <p onclick="location.href='最新優惠.html'">◎ 最新優惠</p>
+        </div>
+        <div class="box2" onclick="location.href='門市資訊.html'">門市資訊</div>
+        <div class="box2" onclick="location.href='企業責任.html'">企業責任</div>
+        <div class="box2" onclick="location.href='品牌故事.html'">品牌故事</div>
+        <div class="box2" onclick="location.href='加入我們.html'">加入我們</div>
+        <div class="box2" onclick="location.href='客服專區.html'">客服專區</div>
+    </header>
+    <div class="float"><!--漂浮小盒子1-->
+        <img src="9優惠.png"> 
+    </div> 
+        <div class="float2"><!--漂浮小盒子2-->
+            <img src="logo.jpg">
+        </div> 
+    <div class="img">    
+        <img class="pic" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/72774396_2643182002398903_4550756259451633664_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=730e14&_nc_ohc=3rCMppg1MkMAX9gTss9&_nc_ht=scontent-tpe1-1.xx&oh=06d3b2a48001a7f514d1ab12bd97d10c&oe=6094A506">
+    </div>
+    <article><!--中間文章-->
+        <div class="line">
+            <div class="card mb-3" style="max-width: 650px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQAAAACgl2eQAAABr0lEQVR4Xu2X0W3EMAxDBXiAjOTVNVIGMKCKZJLLHYrrbwlE8KWO/PpBmJKdqO+R8Zn5iAdQPIDiARQEMjq2XFutmCti7LGQ0poN0L+1Ze2zsVElWHkjoEU1oCcAThozBPi21Wh1uzOgPCw3HYGS5Sqvpd89+b+BlsbkbSClNRdAkehd1BgxX1kfgJZDE+MICkdPtgKoqzXGDA7slPqAFaDVLpbOs2SqK6iHF9A2a791tDSMXsXhCNIJOA6Ukt9gtj0G5mYA9wuYKogbl14AXtUBjsOlVEFWABSxDxeegdo/eSeg0I3nWT5oyD0ZzBsB7FdwWuHGi7aspxWQ+ItryWQHw65dPdkIaHddTRir/B68t2IH4PDbgeGTEBV0t5wDkNQ1lRh4hdhiQzMCikoXi4V+S9TOmyc9AGwNkponVl6t2ANoaTpH4LfAQY8nwwc4p9shkAfiXaYFkFBFg3GSvHGhM3sB/VO9c8vQAfRfXoB0yWmLnyFYvR3uXgD0EgBzs5wRoP3iFSVZRAgjoE7LqWoGL43MOAGwWr/ycsLzsZXqJmwEfIsHUDyA4gEUfwM/9KWR6jks6XQAAAAASUVORK5CYII=">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title"><br><i class="fab fa-line" style="color: green;"></i><span>   </span>加入我們</h3><br>
+                  <p class="card-text">最新資訊一手掌握<span>   </span><i class="far fa-hand-spock fa-pulse" ></i><br>歡迎揪團一起到APPLE GREEN COFFEE</p>
+                  <p class="card-text"><small class="text-muted">蘋果綠咖啡官方LINE： @applegreencoffee</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid"></div>
+        <div class="abc">
+            <div class="d1">徵才公告</div>
+            <div><br></div><div></div>
+            <div class="d2">職務名稱</div>
+            <div class="d3">早班正職</div>
+            <div><br></div><div></div>
+            <div class="d2">需求人數</div>
+            <div class="d3">1-2人</div>
+            <div><br></div><div></div>
+            <div class="d2">職類</div>
+            <div class="d3">門市店員/餐飲服務生</div>
+            <div><br></div><div></div>
+            <div class="d2">職務說明</div>
+            <div class="d3">
+                我們重視與夥伴之間的真誠，期盼一起用心打拼開創未來。<br>
+                讓我們將熱忱傳遞到顧客心中，每一天都是美好的APPLE DAY!<br><br>
+                
+                工作內容： 備餐、點餐、調製飲品為基本首要。<br><br>
+                
+                1.凡事精益求精的持續進步，維持店內飲品輕食品質。<br>
+                2.對於團隊進步有想法及熱情的你，能適時協助夥伴共同完成目標。<br>
+                3.愛乾淨，有禮貌，保持工作環境及店內整潔。<br>
+                4.活潑且不害臊、勇於與顧客熱情的交流。<br>
+                5.對餐飲有熱情，努力且有上進心。<br>
+            </div>
+            <div><br></div><div></div>
+            <div class="d2">員工福利</div>
+            <div class="d3">
+                1.勞健保及6%退休金提撥<br>
+                2.團體意外傷害保險<br>
+                3.月休八天<br>
+                4.尾牙代金(符合資格者可領取)<br>
+                5.特休假(依勞動法規)
+            </div>
+        </div>
+
+        <!-- <table>
+            <tbody>
+                <tr>
+                    <td class="t1">職務名稱</td>
+                    <td class="t2">早班正職</td>
+                </tr>
+                <tr>
+                    <td class="t1">需求人數</td>
+                    <td class="t2">1-2人</td>
+                </tr>
+                <tr>
+                    <td class="t1">職類</td>
+                    <td class="t2">門市店員/餐飲服務生</td>
+                </tr>
+                <tr>
+                    <td class="t1">職務說明</td>
+                    <td class="t2">
+                        我們重視與夥伴之間的真誠，期盼一起用心打拼開創未來。<br>
+                        讓我們將熱忱傳遞到顧客心中，每一天都是美好的APPLE DAY!<br><br>
+                        
+                        工作內容： 備餐、點餐、調製飲品為基本首要。<br><br>
+                        
+                        1.凡事精益求精的持續進步，維持店內飲品輕食品質。<br>
+                        2.對於團隊進步有想法及熱情的你，能適時協助夥伴共同完成目標。<br>
+                        3.愛乾淨，有禮貌，保持工作環境及店內整潔。<br>
+                        4.活潑且不害臊、勇於與顧客熱情的交流。<br>
+                        5.對餐飲有熱情，努力且有上進心
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1">員工福利</td>
+                    <td class="t2">
+                        正職員工享有以下福利：<br>
+                        1.勞健保及6%退休金提撥<br>
+                        2.團體意外傷害保險<br>
+                        3.月休八天<br>
+                        4.尾牙代金(符合資格者可領取)<br>
+                        5.特休假(依勞動法規)
+                    </td>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+            
+        </div>
+    </article>
+    <nav> <!--聯絡方式-->
+        <div>
+        <img  src="facebook.png">
+        <img  src="instagram.png">
+        <img  src="whatsapp.png">
+        <img  src="youtube.png">
+        </div>
+            <span>　　</span> 
+            <div class="num">連絡電話：04-2380-8217<i class="fas fa-mug-hot"></i>
+            <span>　　</span> 
+            聯絡信箱：anapplegreen.coffee@gmail.com<i class="fas fa-mug-hot"></i>
+        </div>
+    </nav>
+    <footer></footer>
+        <!--游標-->
+    
+        <img class="apple" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/67671346_2507707969279641_6272034196542193664_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=myTcjz9oZCoAX-4qbBi&_nc_ht=scontent-tpe1-1.xx&oh=49d1e5f01fca24a8f8ac86f3a0427c9e&oe=6095900D">
+
+        <!--icon-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

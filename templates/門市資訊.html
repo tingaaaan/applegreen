@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🍏 蘋果綠咖啡 ☕ </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+        <!--icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+    <!--放大鏡-->
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="jquery.elevatezoom.min.js"></script>
+
+    <script type="text/javascript" >
+            $(document).ready(function()
+            {
+            $("#flip").click(function(){
+            $(".panel").slideToggle("slow");
+            });
+            });
+
+            $(document).ready(function()
+            {
+            $("#flip2").click(function(){
+            $(".panel2").slideToggle("slow");
+            });
+            });            
+    </script>
+    
+    
+    <style>
+        body {margin:0px;/*對齊網頁上緣*/
+            font-family: 'Noto Serif TC', serif; 
+            max-width: 100vw;
+        } 
+
+        /*上方黑線*/
+        .box{background-color: rgb(27, 66, 24);height: 10px;}
+        /*中間*/
+        article>div
+        {
+        margin:auto;
+        margin-bottom: 40px;
+        flex-grow: 1;
+        height: 500px;
+        width: 60vw;
+        border-radius: 30px;
+        padding: 10px;padding-left: 10px;
+        margin-top: 10px;} 
+        /*中間的地圖*/
+        article>div>img
+        {width: 400px;
+        height: 400px;
+        padding-left: 10px;}
+        /*地圖旁邊的字*/
+        article>div>.address{
+            position:relative ;
+            left: 480px;bottom: 350px;
+            line-height: 50px;
+            width: 22vw;
+            height: 35vh;
+            background-color: rgba(253, 252, 252, 0.788);
+            padding: 20px;
+            text-shadow: rgb(219, 218, 218) 4px 3px 0px;
+            text-align: center;
+            ;
+        }
+        article>div>.address>a{text-decoration:none;color: black;}
+
+        /*門市名字*/
+        article>div>h2{padding-left: 80px;}
+        
+           h2 {padding-left: 80px;
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            background-color: rgba(27, 66, 24, 0.808);
+            text-shadow: rgb(122, 122, 122) 4px 3px 0px;
+            }
+        article{display: flex;flex-direction:column;justify-content: space-around;}
+
+
+        /*選單*/
+        header{
+            display:flex;
+            justify-content:center /**/
+            }
+        header>.panel,#flip,.panel2,#flip2
+            {
+            margin:0px;
+            padding:0px;
+            text-align:center;
+            }
+        header>.panel,.panel2
+            {
+            height:120px;
+            display:none;
+            padding:0px;
+            cursor: pointer
+            }
+        header>.panel2>p>a{text-decoration:none;color: black;}
+        
+        .box2{
+            background-color:white;
+            width:10%;height:50px;
+            display:inline-block; /*一行多div*/
+            text-align: center; /*水平對齊*/
+            line-height: 50px; /*置中*/
+            }
+        .box2>a{width: 100%;height: 100%;}
+        .box2:hover{background-color:black;color: white;cursor: pointer;}
+        
+        /*背景*/
+        .img>.pic{position: fixed;z-index: -1;margin-bottom: 40px;width:80vw;height: 100vh;margin-left:10vw;opacity: 0.5;}
+        
+        /*漂浮小盒子1*/
+        .float>img{width:58px;height:432px;
+        position:fixed;right: 10px;top:60px}
+        /*漂浮小盒子2*/
+        .float2>img{width:130px;height:130px;
+        position:absolute;left: 10px;top:20px;;}
+
+        /*聯絡方法*/
+        nav{background-color: rgba(165, 150, 150, 0.144);padding-left: 350px;display: flex;}
+        nav>div>img{width:35px;height:35px;margin-left: 10px;margin-top: 60px;}
+        nav>.num{text-align:center;margin-top: 70px;margin-left: 20px;}
+
+        /*底下黑線*/
+        footer{background-color: black;height: 10px;margin-top: 5px;}
+
+
+
+
+
+        /*游標*/
+        .apple{height:70px;width:  70px;position: absolute;border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).mousemove(function(event){
+                    var yy =event.pageY;
+                    var y2 = yy + 0;
+                    var xx =event.pageX;
+                    var x2 = xx +20;
+                    $(".apple").css({
+                    "top": y2+"px",
+                    "left": x2+"px"
+                    })
+                });  
+            });        
+    </script>
+</head>
+<body>
+    <div class="box"></div><!--上邊黑線-->
+
+
+    <header><!--目錄-->
+        <div class="box2" onclick="location.href='index.html'">首頁</div>
+        <div class="box2" id="flip" >全部商品</div>
+        <div class="panel">
+        <p onclick="location.href='全部商品.html'">◎ 查看菜單</p>
+        <p onclick="location.href='最新優惠.html'">◎ 最新優惠</p>
+        </div>
+        <div class="box2" id="flip2">門市資訊</div>
+        <div class="panel2">
+            <p> <a href="#01">◎ 黎明門市</a></p>
+            <p> <a href="#02">◎ 學府門市</a></p>
+            <p> <a href="#03">◎ 勝利門市</a></p>
+            </div>
+            <div class="box2" onclick="location.href='企業責任.html'">企業責任</div>
+        <div class="box2" onclick="location.href='品牌故事.html'">品牌故事</div>
+        <div class="box2" onclick="location.href='加入我們.html'">加入我們</div>
+        <div class="box2" onclick="location.href='客服專區.html'">客服專區</div>
+    </header>
+    <div class="float"><!--漂浮小盒子1-->
+        <img src="9優惠.png"> 
+    </div> 
+    <div class="float2"><!--漂浮小盒子2-->
+        <img src="logo.jpg">
+    <!--背景-->
+    </div> 
+    <div class="img">    
+        <img class="pic" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/72774396_2643182002398903_4550756259451633664_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=730e14&_nc_ohc=3rCMppg1MkMAX9gTss9&_nc_ht=scontent-tpe1-1.xx&oh=06d3b2a48001a7f514d1ab12bd97d10c&oe=6094A506">
+    </div>
+    <article><!--地圖+門市資料-->
+        
+        <div>
+            <h2 id="01"><i class="fas fa-coffee"></i> 黎明門市</h2>
+            <img  id="zoom_03" src="黎明店小.jpg" data-zoom-image="黎明店.jpg">
+            <div class="address">
+                門市名稱：黎明門市 </br>
+                <a href="tel:+886423808217"> 門市電話：04-2380-8217</a></br>
+                <a href="https://www.google.com.tw/maps/place/%E8%98%8B%E6%9E%9C%E7%B6%A0%E5%92%96%E5%95%A1%E9%BB%8E%E6%98%8E%E9%96%80%E5%B8%82/@24.1473018,120.6335866,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d150951efb1:0xa736edab01d49330!8m2!3d24.1473018!4d120.6357806?hl=zh-TW" target="_blank">
+                    門市地址：408台中市南屯區黎明路二段209號</a> </br>
+                營業時間：08:00-20:00 </br>
+                其他服務：無線網路</br>
+            </div>
+        </div>
+        <div>
+            <h2 id="02"><i class="fas fa-coffee"></i> 學府門市</h2>
+            <img  id="zoom_02" src="學府店小.jpg" data-zoom-image="學府店.jpg">
+            <div class="address">
+                門市名稱：學府門市 </br>
+                <a href="tel:+886422870588">門市電話：04-2287-0588</a></br>
+                <a href="https://www.google.com.tw/maps/place/%E8%98%8B%E6%9E%9C%E7%B6%A0%E5%92%96%E5%95%A1%E5%AD%B8%E5%BA%9C%E9%96%80%E5%B8%82/@24.1257487,120.6730818,17z/data=!3m1!4b1!4m5!3m4!1s0x34693db49596ac43:0x85ae7d455826791c!8m2!3d24.1257487!4d120.6752758?hl=zh-TW" target="_blank">
+                    門市地址：402台中市南區學府路46號</a> </br>
+                營業時間：07:30-22:30 </br>
+                其他服務：無線網路</br>
+            </div>
+        </div>
+        <div>
+            <h2 id="03"><i class="fas fa-coffee"></i> 勝利門市</h2>
+            <img  id="zoom_01" src="勝利店小.jpg" data-zoom-image="勝利店.jpg">
+            <div class="address">
+                門市名稱：勝利門市 </br>
+                <a href="tel:+886425310309"> 門市電話：04-2531-0309</a></br>
+                <a href="https://www.google.com.tw/maps/place/%E8%98%8B%E6%9E%9C%E7%B6%A0%E5%92%96%E5%95%A1%E5%8B%9D%E5%88%A9%E9%96%80%E5%B8%82/@24.2098394,120.698808,17z/data=!3m1!4b1!4m5!3m4!1s0x3469177a8682b85f:0x64c6930b4693ac58!8m2!3d24.2098394!4d120.701002?hl=zh-TW" target="_blank">
+                    門市地址：427台中市潭子區勝利路139號</a> </br>
+                營業時間：07:00-21:30 </br>
+                其他服務：無線網路</br>
+            </div>
+        </div>
+
+    </article>
+    <!--放大鏡-->
+    <script>
+		function zoom(element, type, custors) {
+			element.elevateZoom({
+				zoomType: type,
+				cursor: custors,
+				zoomWindowFadeIn: 500,
+				zoomWindowFadeOut: 750
+			});
+		}
+		zoom($('#zoom_01'), "lens", "default");
+		zoom($('#zoom_02'), "lens", "default");
+		zoom($('#zoom_03'), "lens", "default");
+	</script>   
+    
+    
+    <nav> <!--聯絡方式-->
+        <div>
+        <img  src="facebook.png">
+        <img  src="instagram.png">
+        <img  src="whatsapp.png">
+        <img  src="youtube.png">
+        </div>
+            <span>　　</span> 
+            <div class="num">連絡電話：04-2380-8217<i class="fas fa-mug-hot"></i>
+            <span>　　</span> 
+             聯絡信箱：anapplegreen.coffee@gmail.com<i class="fas fa-mug-hot"></i>
+        </div>
+    </nav>
+    <footer></footer>
+        <!--游標-->
+    
+        <img class="apple" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/67671346_2507707969279641_6272034196542193664_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=myTcjz9oZCoAX-4qbBi&_nc_ht=scontent-tpe1-1.xx&oh=49d1e5f01fca24a8f8ac86f3a0427c9e&oe=6095900D">
+
+        <!--icon-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+
+</body>
+</html>

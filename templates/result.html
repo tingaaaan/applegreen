@@ -1,7 +1,181 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        建立結果: {{ msg }}
-        <h2><a href="\">回到首頁</a></h2>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🍏 蘋果綠咖啡 ☕ </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+    <!--icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+    <script type="text/javascript" >
+            $(document).ready(function()
+            {
+            $("#flip").click(function(){
+            $(".panel").slideToggle("slow");
+            });
+            });
+    </script>
+
+
+    <style>
+        body {margin:0px;font-family: 'Noto Serif TC', serif;} /*對齊網頁上緣*/
+
+        /*上方黑線*/
+        .box{background-color: rgb(27, 66, 24);height: 10px;}
+        /*中間圖片*/
+        .pic{margin-left:auto;margin:auto;display:block;margin-bottom: 40px;} /*圖片置中*/
+        
+        /*選單*/
+        header{
+            display:flex;
+            justify-content:center /**/
+            }
+        header>.panel,#flip
+            {
+            margin:0px;
+            padding:0px;
+            text-align:center;
+            }
+        header>.panel
+            {
+            height:120px;
+            display:none;
+            padding:0px;
+            cursor: pointer
+            }
+            
+        .box2{
+            background-color:white;
+            width:10%;height:50px;
+            display:inline-block; /*一行多div*/
+            text-align: center; /*水平對齊*/
+            line-height: 50px; /*置中*/
+        }
+        .box2>a{width: 100%;height: 100%;}
+        .box2:hover{background-color:black;color: white;cursor: pointer;}
+
+        /*客服專區*/
+        article>h2{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            background-color: rgba(27, 66, 24, 0.808);
+            text-shadow: rgb(122, 122, 122) 4px 3px 0px;
+            margin-left: 20vw;margin-right:20vw ;
+        }
+        #question{
+            padding-top: 20px;
+            padding-bottom: 360px;
+            color: rgba(14, 48, 11, 0.87);
+            align-self: center;
+        }
+
+        article{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+        
+        /*漂浮小盒子1*/
+        .float>img{width:58px;height:432px;
+        position:fixed;right: 10px;top:60px}
+        /*漂浮小盒子2*/
+        .float2>img{width:130px;height:130px;
+        position:absolute;left: 10px;top:20px;;}
+
+        /*背景*/
+        .img>.pic{position: fixed;z-index: -1;margin-bottom: 60px;width:80vw;height: 120vh;margin-left:10vw;opacity: 0.5;}
+
+        /*聯絡方法*/
+        nav{background-color: rgba(165, 150, 150, 0.144);padding-left: 350px;display: flex;}
+        nav>div>img{width:35px;height:35px;margin-left: 10px;margin-top: 60px;}
+        nav>.num{text-align:center;margin-top: 70px;margin-left: 20px;}
+
+        /*底下黑線*/
+        footer{background-color: black;height: 10px;margin-top: 5px;}
+        /*游標*/
+        .apple{height:70px;width:  70px;position: absolute;border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).mousemove(function(event){
+                    var yy =event.pageY;
+                    var y2 = yy + 0;
+                    var xx =event.pageX;
+                    var x2 = xx +20;
+                    $(".apple").css({
+                    "top": y2+"px",
+                    "left": x2+"px"
+                    })
+                });  
+            });        
+    </script>
+</head>
+<body>
+    <div class="box"></div><!--上邊黑線-->
+
+
+    <header><!--目錄-->
+        <div class="box2" onclick="location.href='index.html'">首頁</div>
+        <div class="box2" id="flip" >全部商品</div>
+        <div class="panel">
+        <p onclick="location.href='全部商品.html'">◎ 查看菜單</p>
+        <p onclick="location.href='最新優惠.html'">◎ 最新優惠</p>
+        </div>
+        <div class="box2" onclick="location.href='門市資訊.html'">門市資訊</div>
+        <div class="box2" onclick="location.href='企業責任.html'">企業責任</div>
+        <div class="box2" onclick="location.href='品牌故事.html'">品牌故事</div>
+        <div class="box2" onclick="location.href='加入我們.html'">加入我們</div>
+        <div class="box2" onclick="location.href='客服專區.html'">客服專區</div>
+    </header>
+    <div class="float"><!--漂浮小盒子1-->
+        <img src="media/9優惠.png"> 
+    </div> 
+        <div class="float2"><!--漂浮小盒子2-->
+            <img src="media/logo.jpg">
+        </div> 
+        <!--背景-->
+    </div> 
+    <div class="img">    
+        <img class="pic" src="media/全商背景.jpg">
+    </div>
+
+    <article><!--中間文章-->
+        <h2>客服專區</h2>
+        <div class="container-fluid"></div>
+        <div id="question">
+            <h3>建立結果: {{ msg }}</h3>
+        </div>
+    </article>
+
+    
+    <nav> <!--聯絡方式-->
+        <div>
+        <img  src="media/facebook.png">
+        <img  src="media/instagram.png">
+        <img  src="media/whatsapp.png">
+        <img  src="media/youtube.png">
+        </div>
+            <span>　　</span> 
+            <div class="num">連絡電話：04-2380-8217<i class="fas fa-mug-hot"></i>
+            <span>　　</span> 
+            聯絡信箱：anapplegreen.coffee@gmail.com<i class="fas fa-mug-hot"></i>
+        </div>
+    </nav>
+    <footer></footer>
+        <!--游標-->
+    
+        <img class="apple" src="media/logo.jpg">
+
+        <!--icon-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+
+</body>
 </html>
